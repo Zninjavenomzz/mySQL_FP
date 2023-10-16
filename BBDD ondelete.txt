@@ -1,0 +1,11 @@
+MySQL da tres opciones para la eliminación o actualización de valores que forman parte de una Foreign Key (ON UPDATE/ ON DELETE)
+
+Restrict--> Cuando se crea la tabla y no se especifica nada se establece automaticamente el Restrict, 
+y cuando intentes borrar una fila que este conectada a otra tabla a través de una foreign key no te 
+deje y salte error.
+
+On cascade-->Al crear la tabla si se especifica on update cascade/on delete cascade, al borrar o 
+actualizar algo conectado a través de una foreign key se actualizara tambien en la otra tabla.
+
+Set Null-->Al crear la tabla si se especifica on update null/on delete null, al borrar o actualizar 
+algo conectado a través de una foreign key se actualizara tambien  y se establecera en null.
