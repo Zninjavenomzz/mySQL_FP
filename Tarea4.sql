@@ -6,14 +6,20 @@ CREATE TABLE alumno(
 idAlumno INT PRIMARY KEY,
 ID CHAR(10) NOT NULL,
 Edad INT NOT NULL,
-Sexo CHAR(1) DEFAULT 'Prefiero no contestar',
+Sexo CHAR(1) DEFAULT 'H',
 idApp INT
 );
 
+ALTER TABLE alumno 
+MODIFY Sexo CHAR(1) DEFAULT 'N';
+
+ALTER TABLE alumno 
+MODIFY idApp INT NOT NULL;
+	
 CREATE TABLE app(
 idApp INT PRIMARY KEY,
 NombreApp VARCHAR(30)
 );
 
-/*ALTER TABLE  alumno
-ADD FOREIGN KEY (idApp) PREFERENCES 
+ALTER TABLE  alumno
+ADD FOREIGN KEY (idApp) REFERENCES app(idApp)
